@@ -98,16 +98,11 @@
         $produto = trim($produto);
 		$cliente = trim($cliente);
 		
-		//if($produto = 'a'){
 			$selectQuery = "SELECT pedido.id_pedido, cliente.id_cliente, produtos.nome, produtos.descricao, produtos.preco FROM produtos
 									 INNER JOIN pedido ON produtos.id_produto = pedido.id_produto
 									 INNER JOIN cliente ON cliente.id_cliente = pedido.id_cliente
 									 WHERE produtos.nome = '$produto'";
-		//} else if ($cliente != ''){
-			//$selectQuery = "SELECT id_produto, produto, cliente FROM produtos WHERE cliente = '$cliente'";
-		//} else{
-			//$selectQuery = "SELECT id_produto, produto, cliente FROM produtos";
-		//}
+
 		$result = mysqli_query($conexao, $selectQuery);
 		if (mysqli_num_rows($result) > 0) {
 			 echo "<table border='1'>"; 

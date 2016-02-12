@@ -24,12 +24,8 @@
         $insertQuery = "INSERT INTO produtos ( id_produto, nome, descricao, preco ) VALUES ( NULL, '$nome', '$descricao', '$preco' )";
         mysqli_query($conexao, $insertQuery);
          
-        //Verificamos se o registro foi inserido, recuperando o número de linhas afetadas
         if( mysqli_affected_rows($conexao) ){
-             
-            //Recuperamos o id do registro inserido
-            $id_produto = mysqli_insert_id($conexao);
-             
+            $id_produto = mysqli_insert_id($conexao);           
         }
          
     }
